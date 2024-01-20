@@ -1,0 +1,42 @@
+package testNnGGlisteners;
+
+import java.io.IOException;
+
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import testNnggCoverFoxBase.Base;
+import testNnggCoverFoxUtility.Utility;
+
+public class ListenerCoverFox extends Base implements ITestListener
+
+{
+	@Override
+	public void onTestFailure(ITestResult result) {
+		
+		try {
+			Utility.takeScreenShot(driver, result.getName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		
+		
+	}
+	
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		
+		
+		
+	}
+
+	
+	
+	
+}
